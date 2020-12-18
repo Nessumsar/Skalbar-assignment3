@@ -1,14 +1,16 @@
 FROM node   
 
-WORKDIR usr/desktop/skalbar-assignment3/
+RUN mkdir /usr/src/app
 
-COPY package*.json /usr/desktop/skalbar-assignment3/
+WORKDIR usr/src/app
+
+COPY package*.json /usr/src/app/
 
 RUN npm install
 
-COPY . /usr/desktop/skalbar-assignment3/
+COPY . /usr/src/app/
 
-EXPOSE 1337
+EXPOSE 4000
 
 CMD ["npm", "start"]
 
